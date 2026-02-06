@@ -2,6 +2,7 @@
 layout: post
 title: "Excursions in Proof Theory"
 categories: misc
+katex: True
 tags:
   - lorem
   - ipsum
