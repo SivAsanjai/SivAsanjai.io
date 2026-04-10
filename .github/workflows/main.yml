@@ -1,11 +1,3 @@
-- name: Html5 Validator
-  uses: Cyb3r-Jak3/html5validator-action@v7.2.0 # Use the version you have
-  with:
-    root: _site/
-    # Add the generated LaTeX CSS to the blacklist
-    blacklist: "assets/ltx-article.css, assets/LaTeXML.css"
-
-    
 name: CI
 
 on:
@@ -101,6 +93,7 @@ jobs:
           root: _site/
           css: true
           skip_git_check: true
+          blacklist: "assets/ltx-article.css, assets/LaTeXML.css"
 
   deploy:
     needs: [build, pa11y-ci, validate]
