@@ -87,11 +87,9 @@ jobs:
         run: |
           mkdir _site
           tar -xf artifact.tar -C _site/
-      - name: Fix LaTeX CSS Units
-        run: |
-          sed -i 's/margin: \([0-9.]\+\);/margin: \1pt;/g' _site/assets/ltx-article.css
-          sed -i 's/padding: \([0-9.]\+\);/padding: \1pt;/g' _site/assets/ltx-article.css
-
+      - name: Hide LaTeX CSS from Validator
+        run: rm -f _site/assets/ltx-article.css _site/assets/LaTeXML.css
+        
       - name: HTML5Validator
         uses: Cyb3r-Jak3/html5validator-action@4ea5e57383ed7e14432ebbaae1b64893b7c5210b
         with:
