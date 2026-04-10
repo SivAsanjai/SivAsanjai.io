@@ -18,27 +18,24 @@ permalink: /thesis/
 <!-- Embedded PDF Viewer -->
 <div class="pdf-viewer-container" style="margin: 2rem 0; border: 1px solid #dee2e6; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
   <object 
-    data="{{ '/assets/pdfs/thesis.pdf' | relative_url }}" 
-    type="application/pdf" 
-    width="100%" 
-    height="800px">
-    
-    <!-- Fallback for browsers that don't support object tag -->
-    <iframe 
-      src="{{ '/assets/pdfs/thesis.pdf' | relative_url }}" 
-      width="100%" 
-      height="800px" 
-      style="border: none;">
-    </iframe>
-    
-    <!-- Final fallback -->
-    <div style="padding: 2rem; text-align: center; background-color: #f8f9fa;">
-      <p style="margin-bottom: 1rem;">Unable to display PDF in browser.</p>
-      <a href="{{ '/assets/pdfs/thesis.pdf' | relative_url }}" download style="color: #0066cc; font-weight: 500;">
-        Click here to download the thesis
-      </a>
-    </div>
-  </object>
+  data="{{ '/assets/pdfs/thesis.pdf' | relative_url }}" 
+  type="application/pdf"
+  style="width:100%; height:800px;">
+  
+  <!-- Fallback for browsers that don't support object tag -->
+  <iframe 
+    src="{{ '/assets/pdfs/thesis.pdf' | relative_url }}"
+    style="width:100%; height:800px; border:none;">
+  </iframe>
+  
+  <!-- Final fallback -->
+  <div style="padding: 2rem; text-align: center; background-color: #f8f9fa;">
+    <p style="margin-bottom: 1rem;">Unable to display PDF in browser.</p>
+    <a href="{{ '/assets/pdfs/thesis.pdf' | relative_url }}" download style="color: #0066cc; font-weight: 500;">
+      Click here to download the thesis
+    </a>
+  </div>
+</object>
 </div>
 
 ## Abstract
