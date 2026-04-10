@@ -4,8 +4,9 @@ title: "Excursions in Proof Theory"
 categories: misc
 katex: True
 tags:
-  - lorem
-  - ipsum
+  - proof-theory
+  - gentzen-style
+  - intutionistic-propositional-logic
 ---
 
 In this post, I document my first excursion into structural proof theory.
@@ -17,7 +18,7 @@ In this post, I document my first excursion into structural proof theory.
 5. Inverse Lemma
 6. Cut Elimination Theorem
 
-$$ x^{2} = y^{3}$$ It’s mainly about properties of sequent calculus. Such as: weakening lemma; introduction axiom for formulas instead of for atomic formulas; inverse lemma, and cut-elimination theorem that we haven’t finished yet.
+$$ x^{2} = y^{3} $$ It’s mainly about properties of sequent calculus. Such as: weakening lemma; introduction axiom for formulas instead of for atomic formulas; inverse lemma, and cut-elimination theorem that we haven’t finished yet.
 
 <!-- more -->
 

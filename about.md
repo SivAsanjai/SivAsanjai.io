@@ -1,356 +1,133 @@
 ---
 layout: page
-title: "About"
-permalink: /about/
+title: Curriculum Vitae
+permalink: /cv/
 ---
 
-whiteglass is a minimal, responsive Jekyll theme for hackers.
+# Siva Sanjai G A
 
-## Installation
+**Current Location:** Gothenburg, Sweden  
+**Email:** sivasanjaiga@gmail.com  
+**Phone:** +91-9994034931  
+**LinkedIn:** [linkedin.com/in/sivasanjaiga](https://linkedin.com/in/sivasanjaiga)
 
-Add this line to your Jekyll site's Gemfile:
-
-``` ruby
-gem "jekyll-whiteglass"
-```
-
-And add this line to your Jekyll site's `_config.yml`:
-
-``` yaml
-theme: jekyll-whiteglass
-```
-
-And then execute:
-
-``` sh
-bundle
-```
-
-Or install it yourself as:
-
-``` sh
-gem install jekyll-whiteglass
-```
-
-## Quick Start
-
-1. Go to [yous/whiteglass-template](https://github.com/yous/whiteglass-template).
-2. Click "Use this template" button, and then create a repository.
-3. Change the options defined in _config.yml. See [Configuration](https://github.com/yous/whiteglass-template#configuration)
-   section under whiteglass-template.
-5. Push some content, then GitHub Actions will generate the site.
-
-## Manual Setup
-
-1. Generate a new Jekyll blog:
-
-   ``` sh
-   jekyll new blog --skip-bundle
-   cd blog
-   ```
-
-2. Edit `Gemfile` to use whiteglass theme:
-
-   ``` ruby
-   gem "jekyll-whiteglass"
-   ```
-
-3. Edit `_config.yml` to use whiteglass theme and its plugins:
-
-   ``` yaml
-   theme: jekyll-whiteglass
-   plugins:
-     - jekyll-archives
-     - jekyll-paginate
-     - jekyll-sitemap
-
-   permalink: /:year/:month/:day/:title/
-   paginate_path: /posts/:num/
-   paginate: 5
-
-   jekyll-archives:
-     enabled:
-       - categories
-       - tags
-     layout: category_archives
-     permalinks:
-       category: /categories/:name/
-       tag: /tags/:name/
-   ```
-
-4. Copy
-   [`index.html`](https://github.com/yous/whiteglass/blob/master/index.html),
-   [`about.md`](https://github.com/yous/whiteglass/blob/master/about.md),
-   [`archives.md`](https://github.com/yous/whiteglass/blob/master/archives.md),
-   [`feed.xml`](https://github.com/yous/whiteglass/blob/master/feed.xml),
-   [`robots.txt`](https://github.com/yous/whiteglass/blob/master/robots.txt),
-   [`_data/i18n.yml`](https://github.com/yous/whiteglass/blob/master/_data/i18n.yml),
-   and [`_data/navigation.yml`](https://github.com/yous/whiteglass/blob/master/_data/navigation.yml)
-   from the theme:
-
-   ``` sh
-   rm index.md
-   curl -L -O "https://github.com/yous/whiteglass/raw/master/{index.html,about.md,archives.md,feed.xml,robots.txt}"
-   curl -L --create-dirs -o _data/#1 "https://github.com/yous/whiteglass/raw/master/_data/{navigation.yml,i18n.yml}"
-   ```
-
-5. Install gems and you're good to go! The blog will be available on
-   `http://127.0.0.1:4000`.
-
-   ``` sh
-   bundle install
-   bundle exec jekyll serve
-   ```
-
-## Upgrading
-
-### From Version < 1.9.1
-
-Copy
-[`_data/i18n.yml`](https://github.com/yous/whiteglass/blob/master/_data/i18n.yml)
-from the theme.
-
-## Deployment to GitHub Pages using Travis CI
-
-This theme uses [jekyll-archives](https://github.com/jekyll/jekyll-archives) gem
-which is [not supported by GitHub Pages](https://help.github.com/articles/configuring-jekyll-plugins/).
-If you want to use full features like categories and tags, I recommend you to
-use Travis CI or other CI services.
-
-To deploy using Travis CI, first copy the [`.travis.yml`](https://github.com/yous/whiteglass/blob/master/.travis.yml)
-of this repository. You can change `target-branch` (`gh-pages` by default) and
-`on.branch` (`master` by default) as you want. If you want further
-customization, see [Travis CI's documentation page](https://docs.travis-ci.com/user/deployment/pages/).
-
-You'll see there's `github-token: $GITHUB_TOKEN`, and this is what you should
-configure. Go to your [personal access tokens](https://github.com/settings/tokens)
-page, and generate new token with `public_repo` or `repo` permission as you
-need. Then go to Travis CI's settings page of your repository, and add a new
-environment variable `GITHUB_TOKEN` with the value of the token you generated.
-
-## Usage
-
-### Customization
-
-To override the default structure and style of whiteglass, simply create the
-concerned directory at the root of your site, copy the file you wish to
-customize to that directory, and then edit the file. e.g., to override the
-[`_includes/footer_content.html`](_includes/footer_content.html) file to add
-contents to footer, create an `_includes` directory, copy
-`_includes/footer_content.html` from jekyll-whiteglass gem folder to
-`<your-site>/_includes` and start editing that file.
-
-For example, you can add favicons to `_includes/head_custom.html`:
-
-``` html
-<link rel="icon" type="image/x-icon" href="{{ "/favicon.ico" | relative_url }}">
-<link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="76x76" href="{{ "/apple-touch-icon-76x76.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="120x120" href="{{ "/apple-touch-icon-120x120.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="152x152" href="{{ "/apple-touch-icon-152x152.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ "/apple-touch-icon-180x180.png" | relative_url }}">
-```
-
-The site's default CSS is in the gem itself,
-[`assets/main.scss`](assets/main.scss). To override the default CSS, the file
-has to exist at your site source. Do either of the following:
-
-- Create a new instance of `main.scss` at site source
-  - Create a new file `main.scss` at `<your-site>/assets/`
-  - Add the frontmatter dashes, and
-  - Add `@import "whiteglass";`, to `<your-site>/assets/main.scss`
-  - Add your custom CSS
-- Download the file from this repo
-  - Create a new file `main.scss` at `<your-site>/assets/`
-  - Copy the contents at [`assets/main.scss`](assets/main.scss) onto the `main.scss` you just created, and edit away
-- Copy directly from jekyll-whiteglass gem
-  - Go to your local jekyll-whiteglass gem installation directory (run `bundle show jekyll-whiteglass` to get the path to it)
-  - Copy the `assets/` folder from there into the root of `<your-site>`
-  - Change whatever values you want, inside `<your-site>/assets/main.scss`
-
-### Locale
-
-`site.lang` is used to declare the primary language for each web page within the
-site.
-
-`lang: en-US` sets the `lang` attribute for the site to the United States flavor
-of English, while `en-GB` would be for the United Kingdom style of English.
-Country codes are optional and the shorter variation `lang: en` is also
-acceptable. You may want to write a post in different language, then add `lang`
-attribute to the frontmatter of that post:
-
-``` yaml
-layout: post
-title: "안녕하세요"
-lang: ko
-```
-
-The date format and other fixed strings are translated using the `_data/i18n.yml` file. If your language is not yet included, feel free to open a [pull request](https://github.com/yous/whiteglass/pulls).
-
-### Description
-
-`site.description` describes the site. This is mainly used in meta descriptions
-for improving SEO. Also, you can set `description` attribute for each post:
-
-``` yaml
-layout: post
-title: Awesome Post
-description: This is an awesome post.
-```
-
-If you don't specify `post.description`, then `post.excerpt` will be used if it
-exist.
-
-### External URL
-
-`external-url` turns the title of your post to a link. Specify a URL which you
-want to link to.
-
-``` yaml
-layout: post
-title: Jekyll whiteglass theme
-external-url: https://github.com/yous/whiteglass
-```
-
-Then the title of your post would look like a link with text
-`Jekyll whiteglass theme →`. This also applies to your blog feed.
-
-### Category
-
-Each post can have `categories` attribute. It can be a string or an array. This
-will be displayed on index, archive and each post, and provide a link to the
-archive of category.
-
-``` yaml
-layout: post
-title: Awesome Post
-categories: Misc
-```
-
-``` yaml
-layout: post
-title: Another Awesome Post
-categories:
-  - Misc
-  - Idea
-```
-
-### Tag
-
-Each post can have `tags` attribute. It can be a string or an array. This will
-be displayed on index, archive and each post, and provide a link to the archive
-of tag.
-
-``` yaml
-layout: post
-title: Awesome Post
-tags: food
-```
-
-``` yaml
-layout: post
-title: Another Awesome Post
-tags:
-  - food
-  - trip
-```
-
-### Feed
-
-Create `<your-site>/feed.xml` with:
-
-``` yaml
 ---
-layout: feed
+
+## Education
+
+### University of Gothenburg
+**Master of Arts in Mathematical Logic** | *Sep 2025 – Present*
+
+- Student Representative, Program Council in Logic
+- Coursework: Proof Theory, Category Theory, Topos Theory
+
+### Ashoka University
+**Postgraduate Diploma in Advanced Studies and Research (DipASR) in Computer Science** | *Aug 2024 – May 2025*
+
+### Indian Institute of Science (IISc)
+**Winter School on Theoretical Computer Science** | *Dec 2024*
+
+- Nominated by the university department and subsequently selected from thousands of nominees for IISc's theory winter school
+- Exposed to latest research in: Monadic 2nd Order Logic, Computational Geometry, Reinforcement Learning, Zero Knowledge Protocols, Fair Division; workshops on Matchings and Differential Privacy
+
+### Ashoka University
+**BSc (Hons.) in Mathematics and Computer Science** | *Aug 2021 – May 2024*
+
+- One of eleven College Board India Scholars nationwide awarded the scholarship for class of 2024
+
+### Stanford University
+**International Honours Program (Undergraduate Student Exchange)** | *June 2022 – Sep 2022*
+
+- GPA: 3.9/4.0
+- Courses: CS229 / STATS229 Machine Learning, ENGR 145 Technology Entrepreneurship, Silicon Valley Innovation Academy (SIVA)
+
+### Dakshin Bharat Hindi Prachar Sabha
+**Hindi Praveen (Rashtrabhasha Praveen) – Hindi Language and Literature** | *Sep 2012 – Aug 2016*  
+*(recognized equivalent to B.A.)*
+
+- Conferred the degree at age 12 as one of the institute of national importance's youngest ever graduates
+
 ---
-```
 
-If you want to use another path for feed, you can specify a non-default path via
-your site's config.
+## Thesis
 
-``` yaml
-feed:
-  path: atom.xml
-```
+### On Random Walks and Exploration on Unknown Networks
+[Link to report](your-link-here)
 
-Then create `<your-site>/atom.xml` with the same content of `feed.xml` above.
+- Explored how probabilistic processes, particularly random walks, behave on regular graphs, and how these insights inform the analysis of randomized algorithms like randomized depth-first search (rDFS)
+- Focusing on toroidal grid graphs, examined the cost of exploration through an electrical network lens, leveraging resistance-based formulations and exploiting the block-circulant structure of the graph Laplacian
+- Enabled efficient computation via the 2D Discrete Fourier Transform and revealed connections to lattice Green's functions, with asymptotic behavior of the form $\frac{1}{2\pi} \ln n + c + O(1)$
 
-### Comments
+---
 
-whiteglass provides the ability to include your favourite commenting service, like [Disqus](https://disqus.com) or [Isso](https://isso-comments.de/).
+## Research Poster
 
-To enable comments on pages and posts:
-1. Overwrite the `_includes/custom_comments_provider.html` with your custom provider of comments.
-2. Add `comments: true` to your `_config.yml`.
+### Leveraging Language Models and a Common Data Model to Unlock Real-World Evidence from Unstructured Electronic Health Record Data in India
+[Link to poster](your-link-here)
 
-To disable comments on certain pages or posts specify `comments: false` in the front matter of the page or post.
+- Developed NLP algorithms and leveraged open-source LLMs tailored to the Indian context to extract and transform clinical features from unstructured clinical notes into the OMOP Common Data Model (CDM)
+- Funded under the GKII–Ashoka Breakthrough Grant, demonstrating interdisciplinary collaboration between Ashoka University and John Hopkins
 
-### Metadata for SEO
+---
 
-#### Keywords
+## Experience
 
-Each post can have `keywords` attribute. This is a comma-separated list which is
-used in meta descriptions for improving SEO.
+### Research Assistant | Institute for Physics, Chalmers University
+*Sep 2025 – Present*
 
-``` yaml
-layout: post
-title: How to configure jekyll-whiteglass
-keywords: jekyll, whiteglass, github pages
-```
+- Exploring the applicability of Equivariant Neural Networks for the decoding problem in quantum computing with Prof. Mats Granth
+- Produced the first implementation of Equivariant Neural Decoder (END) for quantum error correction in the toric code described in Evgenii Egorov, Roberto Bondesan, Max Welling's paper of the same name ([Link to repo](your-link-here))
 
-YAML list is also available:
+### Research Assistant | Mphasis Lab for Machine Learning
+*Jun 2023 – Mar 2024*
 
-``` yaml
-keywords:
-  - jekyll
-  - whiteglass
-  - github pages
-```
+- Fine-tuned LLMs (variants of LLaMA, Falcon, GPT, etc.) to extract drug details from prescriptions and clinical notes
+- Explored and implemented Graph Neural Network and Graph Convolutional Network approaches to represent spatio-temporal medical records and predict disease trajectories and outcomes (All code part of [KutumLab](your-link-here))
+- Suggested using QLoRA for efficient fine-tuning; idea contributed to the team's winning approach for the Privacy Preserving Federated Learning - DocVQA (NeurIPS 2023 competition) challenge
 
-#### Twitter
+### Research Assistant | Koita Centre for Digital Health
+*Jun 2024 – Aug 2024*
 
-- `site.twitter_username` sets `twitter:site` and `twitter:creator` meta tag
-- `site.twitter_image` sets `twitter:image:src` meta tag
-- `page.twitter_card.type` sets `twitter:card` meta tag (default: `summary`)
-  - If `page.twitter_card.type` is `gallery`, it sets `twitter:image0`, `twitter:image1`, `twitter:image2` and `twitter:image3` meta tags with `page.twitter_card.image`, `page.twitter_card.image1`, `page.twitter_card.image2` and `page.twitter_card.image3`, respectively
-  - If `page.twitter_card.type` is `photo`, `page.twitter_card.width` sets `twitter:image:width` meta tag and `page.twitter_card.height` sets `twitter:image:height` meta tag
-- `page.twitter_card.creator` sets `twitter:creator` meta tag. It overrides `site.twitter_username`
-- `page.twitter_card.image` sets `twitter:image:src` meta tag if `page.twitter_card.type` is not `gallery`. It overrides `site.twitter_image`
+- Contributed to write-up for the NeurIPS 2023 competition track winning solution in PPFL-DocVQA, noted with acknowledgement for the same ([write-up and code here](your-link-here))
+- Designing and writing hierarchical Transformer approaches for classifying cancer severity from MRI data, with hierarchical levels for tissue and cell representations (CHAIMELEON grand challenge)
 
-#### Facebook
+### Summer Research Intern | Centre for Bioinformatics, Ashoka University & Government of India
+*Jun 2023 – Aug 2023*
 
-- `site.facebook_app_id` sets `fb:admins` meta tag
-- `site.facebook_page` sets `article:author` meta tag
-- `site.facebook_image` sets `og:image` meta tag
-- `page.facebook.image` sets `og:image` meta tag. It overrides `site.facebook_image`
+- Explored Deep Learning approaches for predicting gene expression levels from promoter sequence data; graph-based representation learning approaches for genomic data
+- Fine-tuned transformer-based models (DNABERT, ProteinBERT) to generate embeddings for genetic sequences
 
-### Navigation
+---
 
-To define header links, add titles and URLs under the `main` key in
-`_data/navigation.yml`:
+## A Selection of Projects
 
-``` yaml
-main:
-  - title: "About"
-    url: /about/
-  - title: "Archives"
-    url: /archives/
-  - title: "GitHub"
-    url: https://github.com/yous/whiteglass
-```
+### A Companion to Shamkanov's Circular Proofs for the Gödel–Löb Provability Logic
+[Link to paper](your-link-here)
 
-### Enabling Google Analytics
+- Wrote a companion to Shamkanov's famous proof, explaining how proof system transformations, circularity, and fixed-point theorems, give interpolation in GL
 
-To enable Google Analytics, add the following lines to your Jekyll site:
+### On the Lovász Local Lemma, Combinatorial Proofs, and Moser's Entropic Argument
+[Link to report](your-link-here)
 
-``` yaml
-google_analytics: UA-NNNNNNNN-N
-```
+- Compendium of ideas from Robin Moser, Terence Tao, Lance Fortnow, and others on using entropy compression to prove existence of combinatorial objects
+- Demonstration of Moser's proof of the algorithmic Lovász Local Lemma in the context of K-SAT using entropy compression and Shannon information theory
 
-For Google Analytics 4, add the following lines:
+### A Study on the Influence of Randomness in SAT Solving
+[Link to GitHub repo](your-link-here)
 
-``` yaml
-google_analytics: G-NNNNNNNNNN
-```
+- Implemented greedy, basic CDCL, and random-flipping methods in SAT solving to study randomness' effects
+- Established randomness as an effective tool among Stochastic Local Search methods
 
-Replace `N`s with your specific ID.
+### Computational Simulation of Neuron Models
+[Link to GitHub repo](your-link-here)
+
+- Implemented inhibitory-excitatory models, integrate-and-fire models, Izhikevich neuron model, and designed a graphical input interface to study activation propagation patterns
+
+### DeepMomentum: Non-Linearizing Learning in Momentum Based Trading Strategies
+[Link to report](your-link-here)
+
+- Built a combined LSTM + momentum strategy based on ideas from Bryan Lim, Stephen Roberts, and Stefan Zohren and backtested on historical NASDAQ time series data
+
+---
+
+*Last updated: April 2026*
