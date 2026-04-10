@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+{% if page.custom_css %}
+  {% for stylesheet in page.custom_css %}
+    <link rel="stylesheet" href="{{ '/assets/css/' | relative_url }}{{ stylesheet }}">
+  {% endfor %}
+{% endif %}
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
