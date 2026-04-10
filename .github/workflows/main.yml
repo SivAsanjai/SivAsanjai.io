@@ -93,7 +93,7 @@ jobs:
           root: _site/
           css: true
           skip_git_check: true
-          blacklist: "assets/ltx-article.css, assets/LaTeXML.css"
+          blacklist: "**/ltx-article.css, **/LaTeXML.css"
 
   deploy:
     needs: [build, pa11y-ci, validate]
