@@ -3,7 +3,9 @@
 main:
   - title: "CV"
     url: /cv/
+  - title: "thesis"
+    url: /thesis/
   - title: "Archives"
     url: /archives/
   - title: "GitHub"
-    url: https://github.com/yous/whiteglass
+    url: https://github.com/SivAsanjai
