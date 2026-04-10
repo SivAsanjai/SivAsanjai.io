@@ -87,13 +87,24 @@ jobs:
         run: |
           mkdir _site
           tar -xf artifact.tar -C _site/
+      - name: Fix LaTeX CSS Units
+        run: |
+          sed -i 's/margin: \([0-9.]\+\);/margin: \1pt;/g' _site/assets/ltx-article.css
+          sed -i 's/padding: \([0-9.]\+\);/padding: \1pt;/g' _site/assets/ltx-article.css
+
+      - name: HTML5Validator
+        uses: Cyb3r-Jak3/html5validator-action@4ea5e57383ed7e14432ebbaae1b64893b7c5210b
+        with:
+          root: _site/
+          css: true
+          skip_git_check: true
       - name: HTML5Validator
         uses: Cyb3r-Jak3/html5validator-action@4ea5e57383ed7e14432ebbaae1b64893b7c5210b # v8.0.0
         with:
           root: _site/
           css: true
           skip_git_check: true
-          blacklist: "**/ltx-article.css, **/LaTeXML.css"
+          
 
   deploy:
     needs: [build, pa11y-ci, validate]
